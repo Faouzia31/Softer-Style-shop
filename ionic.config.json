@@ -1,0 +1,7 @@
+{
+  "name": "SofterStyle",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>newItem</ion-title>
+    <ion-buttons slot ="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="createCloth()" [formGroup]="clothForm">
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Name: </ion-label>
+      <ion-input type="text" formControlName="name"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Price: </ion-label>
+      <ion-input type="text" formControlName="price"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Size: </ion-label>
+      <ion-input type="text" formControlName="size"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Link: </ion-label>
+      <ion-input type="text" formControlName="link"> </ion-input>
+    </ion-item>
+
+    <!-- <ion-item>
+      <ion-label floating>Infos </ion-label>
+      <ion-input type="text" placeholder="Infos" formControlName="infos"> </ion-input>
+    </ion-item> -->
+
+    <ion-item-divider color="primary">
+      More Information about the item!
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label floating>Category </ion-label>
+      <ion-select formControlName="category">
+        <ion-select-option value= "Man">Man</ion-select-option>
+        <ion-select-option value= "Woman">Woman</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating >Status </ion-label>
+      <ion-toggle (ngModelChange)="onChange()" formControlName="status">  </ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Color: </ion-label>
+      <ion-input type="text" formControlName="color"> </ion-input>
+    </ion-item>
+
+    <ion-button type="submit" (click)="getId()">Add a new element</ion-button>
+
+  </ion-list>
+</form>
+</ion-content>

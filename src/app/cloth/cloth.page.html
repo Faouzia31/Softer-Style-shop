@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color=#3171e0>
+    <ion-title>cloth</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label> SofterStyle Shop</ion-label>
+      <ion-button routerLink="/new" expand="block" fill="clear" shape="round">New</ion-button>
+    </ion-list-header>
+
+    <ion-item-sliding *ngFor="let cloth of cloths" >
+      <ion-row>
+        <ion-item >
+          <ion-col>
+            <ion-label>
+              <h4> Article: {{cloth.name}} </h4>
+            </ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label>
+              <span *ngIf="cloth.infos.status === true"> Sold!</span>
+            </ion-label>
+          </ion-col>
+        </ion-item>
+      </ion-row>
+      <ion-item-options side="end">
+        <ion-item-option (click)="seeDetail(cloth.id)" color="secondary">Details</ion-item-option>
+        <ion-item-option (click)="goToUpdate(cloth.id)" color="secondary">Update</ion-item-option>
+        <ion-item-option (click)="deleteCloth(cloth)" color="danger">Delete</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>
+
+

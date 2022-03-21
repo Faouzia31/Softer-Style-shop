@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>update</ion-title>
+    <ion-buttons slot ="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <form (keyup) = "clearError()" (ngSubmit)="updtCloth()" [formGroup]="updtForm">
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Name: </ion-label>
+      <ion-input type="text" formControlName="name">{{cloth?.name}}</ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Price: </ion-label>
+      <ion-input type="number" formControlName="price"> {{cloth?.price}} </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Size: </ion-label>
+      <ion-input type="text" formControlName="size"> {{cloth?.size}} </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Link: </ion-label>
+      <ion-input type="text" formControlName="link">{{cloth?.link}}</ion-input>
+    </ion-item>
+
+    <!-- <ion-item>
+      <ion-label floating>Infos </ion-label>
+      <ion-input type="text" placeholder="Infos" formControlName="infos"> </ion-input>
+    </ion-item> -->
+
+    <ion-item-divider color="primary">
+      More Information about the item!
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label floating> Category: {{cloth?.infos?.category}} </ion-label>
+      <ion-select formControlName="category">
+        <ion-select-option value= "Man">Man</ion-select-option>
+        <ion-select-option value= "Woman">Woman</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating > Status: {{cloth?.infos?.status}} </ion-label>
+      <ion-toggle (ngModelChange)="onChange()" formControlName="status">  </ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Color:  </ion-label>
+      <ion-input type="text" formControlName="color"> {{cloth?.infos?.color}}</ion-input>
+    </ion-item>
+
+    <ion-button type="submit">Save changes!</ion-button>
+
+  </ion-list>
+</form>
+</ion-content>
+

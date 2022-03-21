@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot ="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons (click)="deleteCloth(cloth)" slot ="end">
+      <ion-icon slot="icon-only" name="trash"></ion-icon>
+    </ion-buttons>
+    <ion-title>ClothDetail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <p>The link is:</p>
+        <ion-img [src]="cloth?.link"></ion-img>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>The name of this article is: {{cloth?.name}} </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>The price of this article is: {{cloth?.price}} </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>The size of this article is: {{cloth?.size}}</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>This article is for: {{cloth?.infos?.category}}</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>This article is: {{cloth?.infos?.status}}</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>The color of this article is: {{cloth?.infos?.color}} </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+
+
+  </ion-grid>
+  <!-- <button ion-button block (click)="addCloth()">Create</button> -->
+
+</ion-content>
